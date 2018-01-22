@@ -18,5 +18,12 @@ class  ProdutoController extends Controller{
 		$html .='</ul>';
 		return $html;
 	}
+
+	public function listaProdutos(){
+
+		$produtos = DB::select('select * from produtos');
+		
+		return view('listagem')->with('produtos', $produtos);
+	}
 }
 
